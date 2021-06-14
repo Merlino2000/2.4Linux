@@ -120,7 +120,7 @@ systemctl enable --now docker:
   cmd.run
 sudo docker volume create --name storage:
   cmd.run
-docker run -d --name fileserver -v storag:/web -p 8080:8080 halverneus/static-file-server:latest:
+docker run -d --name fileserver -v storage:/web -p 8080:8080 halverneus/static-file-server:latest:
   cmd.run
 Copy_and_run__nagios_script:
   cmd.script:
