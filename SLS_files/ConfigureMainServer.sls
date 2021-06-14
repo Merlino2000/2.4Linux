@@ -49,9 +49,11 @@ start-nagios:
     - names:
        - systemctl enable nagios
        - service nagios start
+mkdir /usr/local/nagios/etc/servers/:
+  cmd.run
 syslog-ng:
   pkg.installed
-syslog-ng.conf:
+syslog-ng.conf: 
   file.managed:
     - name: /etc/syslog-ng/conf.d/syslog.conf
     - source: salt://files/syslog-ng/server
